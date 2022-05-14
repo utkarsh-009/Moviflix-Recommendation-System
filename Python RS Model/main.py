@@ -7,6 +7,15 @@ import difflib
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
+# Dependencies to get movie poster
+from bs4 import BeautifulSoup
+import requests,io
+import PIL.Image
+from urllib.request import urlopen
+import streamlit as st
+
+
+
 # Data Collection and Pre-Processing
 url = "https://drive.google.com/file/d/1wmHJ4aRSddl6uUl95a5T1JibDNjaL0Kn/view?usp=sharing"
 path = 'https://drive.google.com/uc?export=download&id='+url.split('/')[-2]
@@ -32,9 +41,24 @@ feature_vectors = vectorizer.fit_transform(combined_features)
 # getting the similarity scores using cosine similarity
 similarity = cosine_similarity(feature_vectors)
 
+def movie_poster_fetcher(imdb_link):
+    ## Display Movie Poster
+    url_data = requests.get(imdb_link).text
+    s_data = BeautifulSoup(url_data, 'html.parser')
+    imdb_dp = s_data.find("meta", property="og:image")
+    movie_poster_link = str(imdb_dp.attrs['content'])
+    return movie_poster_link
+    # u = urlopen(movie_poster_link)
+    # raw_data = u.read()
+    # image = PIL.Image.open(io.BytesIO(raw_data))
+    # image = image.resize((158, 301), )
+    # st.image(image, use_column_width=False)s
+
+
 app = Flask(__name__)
 
 @app.route("/api/<string:movie_name>")
+
 def movieRs(movie_name):
     # movie_name = str(request.args(['query']))
     list_of_all_titles = movies_data['title'].tolist()
@@ -57,11 +81,15 @@ def movieRs(movie_name):
         index = movie[0]
         title_from_index =  movies_data[movies_data.index == index]['title'].values[0]
         homepage_from_index = movies_data[movies_data.index == index]['homepage'].values[0]
+        desc = movies_data[movies_data.index == index]['overview'].values[0]
         if (i <= 10):
-            mlist.append({'id': i, 'movie_name': title_from_index, 'homepage': homepage_from_index})
+            movie_poster_url = movie_poster_fetcher(homepage_from_index)
+            mlist.append({'id': i, 'movie_name': title_from_index, 'homepage': homepage_from_index, 'image_url': movie_poster_url, 'description': desc})
             i += 1
     
     return jsonify(mlist)
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
