@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -30,6 +31,29 @@ class _HomeScreenState extends State<HomeScreen> {
             icon: Icon(Icons.search),
           )
         ],
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
+          child: Column(
+            children: [
+              Text(
+                "Top Rated Movies",
+                style: GoogleFonts.bebasNeue(
+                    fontSize: 25,
+                    color: Colors.white,
+                    fontWeight: FontWeight.w100),
+              ),
+              SizedBox(
+                height: 15,
+              ),
+              CarouselSlider(
+                options: CarouselOptions(),
+                items: [],
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
