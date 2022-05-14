@@ -1,6 +1,10 @@
+import 'dart:convert';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix_app/Model/topRatedSlider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -11,6 +15,18 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
+  void initState() {
+    super.initState();
+    loadData();
+  }
+
+  loadData() async {
+    var topRatedjson =
+        await rootBundle.loadString("assets/json/top50_rated.json");
+    var decodedData = jsonDecode(topRatedjson);
+    print(decodedData);
+  } 
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFF121212),
@@ -48,8 +64,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 15,
               ),
               CarouselSlider(
-                options: CarouselOptions(),
-                items: [],
+                options: CarouselOptions(
+                  enableInfiniteScroll: false,
+                  aspectRatio: 16 / 9,
+                  enlargeCenterPage: true,
+                ),
+                items: [
+                ],
               )
             ],
           ),
