@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,17 +14,28 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
+
+  // called when this object is inserted into the tree.
   void initState() {
     super.initState();
     loadData();
   }
 
   loadData() async {
-    var topRatedjson =
+    await Future.delayed(Duration(seconds: 2));
+
+    // The rootBundle contains the resources that were packaged with the application when it was built.
+    final topRatedjson =
         await rootBundle.loadString("assets/json/top50_rated.json");
-    var decodedData = jsonDecode(topRatedjson);
-    print(decodedData);
-  } 
+
+    // jsonDecode parses the string and returns the resulting Json object
+    final decodedData = jsonDecode(topRatedjson);
+    var topMovieData = decodedData["topRatedMovies"];
+    List<TopRatedSlider> list = List.from(topMovieData)
+        .map<TopRatedSlider>((topMovie) => TopRatedSlider.fromMap(topMovie))
+        .toList();
+    setState(() {});
+  }
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,13 +73,9 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: 15,
               ),
-              CarouselSlider(
-                options: CarouselOptions(
-                  enableInfiniteScroll: false,
-                  aspectRatio: 16 / 9,
-                  enlargeCenterPage: true,
-                ),
-                items: [
+              ListView(
+                children: [
+                  
                 ],
               )
             ],
