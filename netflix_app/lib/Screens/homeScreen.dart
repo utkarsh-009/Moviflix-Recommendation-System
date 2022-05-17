@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix_app/widgets/topRated.dart';
 
 import '../models/topRatedSlider.dart';
 
@@ -17,8 +18,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
 
-  //To generate random integer
-  List list = List.generate(50, (i) => i);
+  // //To generate random integer
+  // List list = List.generate(49, (i) => i);
 
   // called when this object is inserted into the tree.
   void initState() {
@@ -27,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   loadData() async {
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(Duration(seconds: 0));
 
     // The rootBundle contains the resources that were packaged with the application when it was built.
     final topRatedjson =
@@ -39,8 +40,6 @@ class _HomeScreenState extends State<HomeScreen> {
     TopMovieData.topMovies = List.from(topMovieData)
         .map<TopRatedSlider>((topMovies) => TopRatedSlider.fromMap(topMovies))
         .toList();
-
-    list.shuffle();
 
     setState(() {});
   }
@@ -82,47 +81,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 15,
               ),
               Expanded(
-                child: ListView.builder(
-                  itemCount: 10,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    // Numbers are always unique and random
-                    index = list[index];
-
-                    return InkWell(
-                      onTap: () {},
-                      child: Container(
-                        width: 140,
-                        child: Column(
-                          children: [
-                            Container(
-                              height: 200,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                  image: NetworkImage(
-                                      TopMovieData.topMovies[index].imageUrl),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 5,
-                            ),
-                            Container(
-                              child: Text(
-                                "${TopMovieData.topMovies[index].title}",
-                                style: GoogleFonts.bebasNeue(
-                                    fontSize: 15,
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.w100),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              )
+                child: TopRated(),
+              ),
+              
             ],
           ),
         ),
