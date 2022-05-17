@@ -17,8 +17,8 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
 
-//To generate random integer
-  Random random = new Random();
+  //To generate random integer
+  List list = List.generate(50, (i) => i);
 
   // called when this object is inserted into the tree.
   void initState() {
@@ -39,6 +39,9 @@ class _HomeScreenState extends State<HomeScreen> {
     TopMovieData.topMovies = List.from(topMovieData)
         .map<TopRatedSlider>((topMovies) => TopRatedSlider.fromMap(topMovies))
         .toList();
+
+    list.shuffle();
+
     setState(() {});
   }
 
@@ -83,7 +86,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemCount: 10,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
-                    index = random.nextInt(50);
+                    // Numbers are always unique and random
+                    index = list[index];
+
                     return InkWell(
                       onTap: () {},
                       child: Container(
