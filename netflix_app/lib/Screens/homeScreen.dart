@@ -3,7 +3,8 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:netflix_app/Model/topRatedSlider.dart';
+
+import '../models/topRatedSlider.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -28,12 +29,13 @@ class _HomeScreenState extends State<HomeScreen> {
     final topRatedjson =
         await rootBundle.loadString("assets/json/top50_rated.json");
 
-    // jsonDecode parses the string and returns the resulting Json object
+    // jsonDecode decodes the string and returns the resulting Json object
     final decodedData = jsonDecode(topRatedjson);
     var topMovieData = decodedData["topRatedMovies"];
-    List<TopRatedSlider> list = List.from(topMovieData)
-        .map<TopRatedSlider>((topMovie) => TopRatedSlider.fromMap(topMovie))
+    TopMovieData.topMovies = List.from(topMovieData)
+        .map<TopRatedSlider>((topMovies) => TopRatedSlider.fromMap(topMovies))
         .toList();
+    var randomTop = (TopMovieData.topMovies.toList().shuffle());
     setState(() {});
   }
 
@@ -58,7 +60,7 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         ],
       ),
-      body: SingleChildScrollView(
+      body: Container(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
           child: Column(
@@ -73,10 +75,44 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: 15,
               ),
-              ListView(
-                children: [
-                  
-                ],
+              Expanded(
+                child: ListView.builder(
+                  itemCount: 10,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return InkWell(
+                      onTap: () {},
+                      child: Container(
+                        width: 140,
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 200,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: NetworkImage(
+                                      TopMovieData.topMovies[index].imageUrl),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Container(
+                              child: Text(
+                                "${TopMovieData.topMovies[index].title}",
+                                style: GoogleFonts.bebasNeue(
+                                    fontSize: 15,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w100),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
               )
             ],
           ),

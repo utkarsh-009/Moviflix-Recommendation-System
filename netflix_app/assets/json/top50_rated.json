@@ -1,4 +1,5 @@
-[
+{
+  "topRatedMovies" : [
   {
     "description": "The Shawshank Redemption: Directed by Frank Darabont. With Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler. Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
     "homepage": "https://www.imdb.com/title/tt0111161",
@@ -357,3 +358,4 @@
     "title": "Paths of Glory"
   }
 ]
+}

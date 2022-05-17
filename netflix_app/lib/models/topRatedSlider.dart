@@ -4,8 +4,8 @@
 
 import 'dart:convert';
 
-class TopRatedSlider {
-  static final List <TopRatedSlider> topMovie = [
+class TopMovieData {
+  static List <TopRatedSlider> topMovies = [
     TopRatedSlider(
         description:
             "The Shawshank Redemption: Directed by Frank Darabont. With Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler. Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
@@ -15,6 +15,10 @@ class TopRatedSlider {
             "https://m.media-amazon.com/images/M/MV5BMDFkYTc0MGEtZmNhMC00ZDIzLWFmNTEtODM1ZmRlYWMwMWFmXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_FMjpg_UX1000_.jpg",
         title: "The Shawshank Redemption")
   ];
+}
+
+class TopRatedSlider {
+
 
   TopRatedSlider({
     required this.description,
@@ -29,15 +33,15 @@ class TopRatedSlider {
   int id;
   String imageUrl;
   String title;
-
-  factory TopRatedSlider.fromMap(Map<String, dynamic> json) => TopRatedSlider(
-        description: json["description"],
-        homepage: json["homepage"],
-        id: json["id"],
-        imageUrl: json["image_url"],
-        title: json["title"],
+//Decode
+  factory TopRatedSlider.fromMap(Map<String, dynamic> map) => TopRatedSlider(
+        description: map["description"],
+        homepage: map["homepage"],
+        id: map["id"],
+        imageUrl: map["image_url"],
+        title: map["title"],
       );
-
+//Encode  
   Map<String, dynamic> toMap() => {
         "description": description,
         "homepage": homepage,
