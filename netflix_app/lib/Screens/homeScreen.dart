@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -15,6 +16,9 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
+
+//To generate random integer
+  Random random = new Random();
 
   // called when this object is inserted into the tree.
   void initState() {
@@ -35,7 +39,6 @@ class _HomeScreenState extends State<HomeScreen> {
     TopMovieData.topMovies = List.from(topMovieData)
         .map<TopRatedSlider>((topMovies) => TopRatedSlider.fromMap(topMovies))
         .toList();
-    var randomTop = (TopMovieData.topMovies.toList().shuffle());
     setState(() {});
   }
 
@@ -80,6 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemCount: 10,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) {
+                    index = random.nextInt(50);
                     return InkWell(
                       onTap: () {},
                       child: Container(
