@@ -4,6 +4,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix_app/widgets/searchButton.dart';
 import 'package:netflix_app/widgets/topRated.dart';
 
 import '../models/topRatedSlider.dart';
@@ -49,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Color(0xFF121212),
       appBar: AppBar(
         backgroundColor: Color(0xFF121212),
-        centerTitle: true,
+        // centerTitle: true,
         title: Text(
           "Netflix",
           style: GoogleFonts.bebasNeue(fontSize: 25, color: Colors.red),
@@ -60,7 +61,11 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => MySearchButton()),
+              );
+            },
             icon: Icon(Icons.search),
           )
         ],
@@ -83,7 +88,6 @@ class _HomeScreenState extends State<HomeScreen> {
               Expanded(
                 child: TopRated(),
               ),
-              
             ],
           ),
         ),
