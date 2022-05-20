@@ -65,25 +65,61 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         ],
       ),
-      body: Container(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
-          child: Column(
-            children: [
-              Text(
-                "Top Rated Movies",
-                style: GoogleFonts.bebasNeue(
-                    fontSize: 25,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w100),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Expanded(
-                child: TopRated(),
-              ),
-            ],
+      body: SingleChildScrollView(
+        child: Container(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
+            child: Column(
+              children: [
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    "Top Rated Movies",
+                    style: GoogleFonts.bebasNeue(
+                        fontSize: 23,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w100),
+                  ),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Container(
+                  height: 300,
+                  child: TopRated(),
+                ),
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    "Trending Movies",
+                    style: GoogleFonts.bebasNeue(
+                        fontSize: 23,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w100),
+                  ),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Container(
+                  height: 300,
+                  child: TopRated(),
+                ),
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    "Recommended Movies",
+                    style: GoogleFonts.bebasNeue(
+                        fontSize: 23,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w100),
+                  ),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+              ],
+            ),
           ),
         ),
       ),
