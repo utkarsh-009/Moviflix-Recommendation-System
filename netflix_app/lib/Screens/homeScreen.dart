@@ -1,6 +1,4 @@
 import 'dart:convert';
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,9 +16,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
-
-  // //To generate random integer
-  // List list = List.generate(49, (i) => i);
 
   // called when this object is inserted into the tree.
   void initState() {
@@ -62,9 +57,9 @@ class _HomeScreenState extends State<HomeScreen> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(builder: (context) => MySearchButton()),
-              );
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => MySearchButton()));
+              MySearchButton();
             },
             icon: Icon(Icons.search),
           )
