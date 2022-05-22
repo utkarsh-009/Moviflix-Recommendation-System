@@ -26,7 +26,14 @@ class _TrendingSliderState extends State<TrendingSlider> {
       logConfig: ConfigLogger(showLogs: true, showErrorLogs: true),
     );
 
+    //Map
     Map trendingresult = await tmdbWithCustomLogs.v3.trending.getTrending();
+    print(trendingresult);
+
+    setState(() {
+      //List
+      trendingMovies = trendingresult['results'];
+    });
   }
 
   Widget build(BuildContext context) {
