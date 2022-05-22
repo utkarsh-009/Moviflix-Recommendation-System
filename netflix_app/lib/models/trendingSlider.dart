@@ -15,11 +15,18 @@ class _TrendingSliderState extends State<TrendingSlider> {
   final readaccesstoken =
       'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZTZlODRiMmVlOTc1YmIwMDRiMTY0MzgyNzE1Y2Y3OCIsInN1YiI6IjYyOGE0ODY0MjQ5NWFiNTI3ZGQxMDM3YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.h7nA0i6DrGUcT96vmODGtk_Qh2r4u15kvsXqmhh_kPI';
 
+  void initState() {
+    loadMovies();
+    super.initState();
+  }
+
   loadMovies() async {
     TMDB tmdbWithCustomLogs = TMDB(
       ApiKeys(apikey, readaccesstoken),
       logConfig: ConfigLogger(showLogs: true, showErrorLogs: true),
     );
+
+    Map trendingresult = await tmdbWithCustomLogs.v3.trending.getTrending();
   }
 
   Widget build(BuildContext context) {
