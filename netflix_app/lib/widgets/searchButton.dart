@@ -6,6 +6,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:netflix_app/Screens/homeScreen.dart';
 import 'package:netflix_app/widgets/recommended.dart';
 
+//Global variable
+String rcmd_movie = "inital";
+
 class MySearchButton extends StatefulWidget {
   const MySearchButton({Key? key}) : super(key: key);
 
@@ -15,7 +18,6 @@ class MySearchButton extends StatefulWidget {
 
 class _MySearchButtonState extends State<MySearchButton> {
   @override
-  String rcmd_movie = "";
   String url = "";
   var data;
 

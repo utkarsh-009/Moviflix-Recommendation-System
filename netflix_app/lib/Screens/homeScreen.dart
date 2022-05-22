@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix_app/widgets/recommended.dart';
 import 'package:netflix_app/widgets/searchButton.dart';
 import 'package:netflix_app/widgets/topRated.dart';
 
@@ -119,6 +120,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 SizedBox(
                   height: 15,
+                ),
+                Container(
+                  height: 360,
+                  child: Recommended(),
                 ),
               ],
             ),
