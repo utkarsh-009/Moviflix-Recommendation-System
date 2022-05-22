@@ -38,8 +38,6 @@ class _HomeScreenState extends State<HomeScreen> {
         .map<TopRatedSlider>((topMovies) => TopRatedSlider.fromMap(topMovies))
         .toList();
 
-    //
-
     setState(() {});
   }
 
