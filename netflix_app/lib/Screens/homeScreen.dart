@@ -69,15 +69,15 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: SingleChildScrollView(
-        child: Container(
-          child: Padding(
+          child: Container(
+        child: Padding(
             padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
             child: Column(
               children: [
                 Align(
                   alignment: Alignment.topLeft,
                   child: Text(
-                    "Top Rated Movies",
+                    "Trending Movies",
                     style: GoogleFonts.bebasNeue(
                         fontSize: 23,
                         color: Colors.white,
@@ -94,7 +94,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Align(
                   alignment: Alignment.topLeft,
                   child: Text(
-                    "Trending Movies",
+                    "Top Rated Movies",
                     style: GoogleFonts.bebasNeue(
                         fontSize: 23,
                         color: Colors.white,
@@ -126,10 +126,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   child: Recommended(),
                 ),
               ],
-            ),
-          ),
-        ),
-      ),
+            )),
+      )),
     );
   }
 }
