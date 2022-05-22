@@ -1,11 +1,7 @@
-// To parse this JSON data, do
-//
-//     final topRatedSlider = topRatedSliderFromMap(jsonString);
-
 import 'dart:convert';
 
 class TopMovieData {
-  static List <TopRatedSlider> topMovies = [
+  static List<TopRatedSlider> topMovies = [
     TopRatedSlider(
         description:
             "The Shawshank Redemption: Directed by Frank Darabont. With Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler. Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
@@ -18,8 +14,6 @@ class TopMovieData {
 }
 
 class TopRatedSlider {
-
-
   TopRatedSlider({
     required this.description,
     required this.homepage,
@@ -41,7 +35,7 @@ class TopRatedSlider {
         imageUrl: map["image_url"],
         title: map["title"],
       );
-//Encode  
+//Encode
   Map<String, dynamic> toMap() => {
         "description": description,
         "homepage": homepage,
