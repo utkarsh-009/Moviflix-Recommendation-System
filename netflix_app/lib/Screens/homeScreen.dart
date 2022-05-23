@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   bool isLoading = true;
 
   void startTimer() {
-    Timer.periodic(const Duration(seconds: 3), (t) {
+    Timer.periodic(const Duration(seconds: 2), (t) {
       setState(() {
         isLoading = false; //set loading to false
       });
@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   loadData() async {
-    await Future.delayed(Duration(seconds: 2));
+    await Future.delayed(Duration(seconds: 0));
     /* TOP RATED MOVIES */
 
     // The rootBundle contains the resources that were packaged with the application when it was built.
