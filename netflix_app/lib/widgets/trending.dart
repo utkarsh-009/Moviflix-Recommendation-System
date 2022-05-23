@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix_app/Screens/trendingDetailedPage.dart';
 import 'package:netflix_app/models/trendingSlider.dart';
 
 class Trending extends StatefulWidget {
@@ -30,7 +31,16 @@ class _TrendingState extends State<Trending> {
           index = list[index];
 
           return InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) =>
+                      TrendingDetailedPage(topTrendMovie: TopTrendingMovieData
+                            .trendingMovies[index]),
+                ),
+              );
+            },
             child: Container(
               width: 140,
               height: 250,
