@@ -15,8 +15,10 @@ class TopRatedDetailedPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Color(0xFF121212),
-        body: Column(
-          children: [Image.network(topRatedMovie.imageUrl)],
+        body: SingleChildScrollView(
+          child: Column(
+            children: [Image.network(topRatedMovie.imageUrl)],
+          ),
         ));
   }
 }
