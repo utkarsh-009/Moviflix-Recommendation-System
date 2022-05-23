@@ -1,5 +1,5 @@
 {
-    "trendingMovies" : [
+    "trendingTopMovies" : [
     {
       "description": "Doctor Strange teams up with a mysterious teenage girl from his dreams who can travel across multiverses, to battle multiple threats, including other-universe versions of himself, which threaten to wipe out millions across the multiverse. They seek help from Wanda the Scarlet Witch, Wong and others.",
       "homepage": "https://www.imdb.com/title/tt9419884",
@@ -25,7 +25,7 @@
         "description": "Sophie and her close-knit group of friends are in the midst of figuring out who they are, what they want out of life, and how to fall in love in the age of dating apps and limitless options",
         "homepage": "https://www.imdb.com/title/tt14500082",
         "id": 3,
-        "image_url": "https://m.media-amazon.com/images/M/MV5BZjBlMjIxN2ItNTMyNi00NDk5LWFhMzEtNzdiODE0Y2M4MWI2XkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_FMjpg_UX1000_.jpg",
+        "image_url": "https://m.media-amazon.com/images/M/MV5BYTg2Yzk2NGItM2NhZS00YjBhLThiYWUtYmY1ZTUzMTY2YTVjXkEyXkFqcGdeQXVyNjY1MTg4Mzc@._V1_FMjpg_UX1000_.jpg",
         "title": "How I Met Your Father"
       },
       {
@@ -78,11 +78,11 @@
         "title": "No Time to Die"
       },
       {
-        "description": "A story set in the heart of Patiala and much like the city, it's full of love and laughter, colour and drama. This story is all about family and its values, unresolved yearnings and unexpected reconciliations.",
-        "homepage": "https://www.imdb.com/title/tt13449624",
+        "description": "A romantic drama set in Europe during the 1970s.",
+        "homepage": "https://www.imdb.com/title/tt8960382",
         "id": 12,
-        "image_url": "https://m.media-amazon.com/images/M/MV5BYzRiZjQ4N2EtZDhjNi00MjIyLWE3YmUtZGVhYTQ5MDdjYTBhXkEyXkFqcGdeQXVyOTI3MzI4MzA@._V1_FMjpg_UX1000_.jpg",
-        "title": "Jug Jugg Jeeyo"
+        "image_url": "https://m.media-amazon.com/images/M/MV5BMzNhOTdlNmUtYzNiYi00MmUxLTg3ZjgtZjk4Y2Y5YTk3ODdiXkEyXkFqcGdeQXVyMTE2MjAzMTU3._V1_FMjpg_UX1000_.jpg",
+        "title": "Radhe Shyam"
       },
       {
         "description": "Nearly three decades after the discovery of the T-virus, an outbreak reveals the Umbrella Corporation's dark secrets. Based on the horror franchise.",
@@ -102,7 +102,7 @@
         "description": "A fictitious story about two legendary revolutionaries and their journey away from home before they started fighting for their country in 1920's",
         "homepage": "https://www.imdb.com/title/tt8178634",
         "id": 15,
-        "image_url": "https://m.media-amazon.com/images/M/MV5BOTA5NzQwMGMtNDRlZC00YzA4LTliMzQtNGM0NDIwYTk5Y2ZiXkEyXkFqcGdeQXVyMTIyNzY0NTMx._V1_FMjpg_UX1000_.jpg",
+        "image_url": "https://www.telugubulletin.com/wp-content/uploads/2022/02/images-48.jpeg",
         "title": "RRR"
       },
       {

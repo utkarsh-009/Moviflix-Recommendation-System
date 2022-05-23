@@ -1,12 +1,14 @@
+import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix_app/models/topRatedSlider.dart';
+import 'package:netflix_app/models/trendingSlider.dart';
 import 'package:netflix_app/widgets/recommended.dart';
 import 'package:netflix_app/widgets/searchButton.dart';
 import 'package:netflix_app/widgets/topRated.dart';
-
-import '../models/topRatedSlider.dart';
+import 'package:netflix_app/widgets/trending.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -17,15 +19,27 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   @override
+  bool isLoading = true;
+
+  void startTimer() {
+    Timer.periodic(const Duration(seconds: 3), (t) {
+      setState(() {
+        isLoading = false; //set loading to false
+      });
+      t.cancel(); //stops the timer
+    });
+  }
 
   // called when this object is inserted into the tree.
   void initState() {
     super.initState();
+    startTimer();
     loadData();
   }
 
   loadData() async {
-    await Future.delayed(Duration(seconds: 0));
+    await Future.delayed(Duration(seconds: 2));
+    /* TOP RATED MOVIES */
 
     // The rootBundle contains the resources that were packaged with the application when it was built.
     final topRatedjson =
@@ -36,6 +50,20 @@ class _HomeScreenState extends State<HomeScreen> {
     var topMovieData = decodedData["topRatedMovies"];
     TopMovieData.topMovies = List.from(topMovieData)
         .map<TopRatedSlider>((topMovies) => TopRatedSlider.fromMap(topMovies))
+        .toList();
+
+    /* TRENDING MOVIES */
+
+    // The rootBundle contains the resources that were packaged with the application when it was built.
+    final trendingjson =
+        await rootBundle.loadString("assets/json/trending.json");
+
+    // jsonDecode decodes the string and returns the resulting Json object
+    final trendingDecodedData = jsonDecode(trendingjson);
+    var trendingMovieData = trendingDecodedData["trendingTopMovies"];
+    TopTrendingMovieData.trendingMovies = List.from(trendingMovieData)
+        .map<TrendingMovieSlider>((trendingTopMovies) =>
+            TrendingMovieSlider.fromMap(trendingTopMovies))
         .toList();
 
     setState(() {});
@@ -66,66 +94,72 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         ],
       ),
-      body: SingleChildScrollView(
-          child: Container(
-        child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
-            child: Column(
-              children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    "Trending Movies",
-                    style: GoogleFonts.bebasNeue(
-                        fontSize: 23,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w100),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Container(
-                  height: 300,
-                  child: TopRated(),
-                ),
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    "Top Rated Movies",
-                    style: GoogleFonts.bebasNeue(
-                        fontSize: 23,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w100),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Container(
-                  height: 300,
-                  child: TopRated(),
-                ),
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: Text(
-                    "Recommended Movies",
-                    style: GoogleFonts.bebasNeue(
-                        fontSize: 23,
-                        color: Colors.white,
-                        fontWeight: FontWeight.w100),
-                  ),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Container(
-                  height: 360,
-                  child: Recommended(),
-                ),
-              ],
-            )),
-      )),
+      body: (isLoading != true)
+          ? SingleChildScrollView(
+              child: Container(
+                  child: Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 12, horizontal: 10),
+                      child: Column(
+                        children: [
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Text(
+                              "Trending Movies",
+                              style: GoogleFonts.bebasNeue(
+                                  fontSize: 23,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w100),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Container(
+                            height: 300,
+                            child: Trending(),
+                          ),
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Text(
+                              "Top Rated Movies",
+                              style: GoogleFonts.bebasNeue(
+                                  fontSize: 23,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w100),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Container(
+                            height: 300,
+                            child: TopRated(),
+                          ),
+                          Align(
+                            alignment: Alignment.topLeft,
+                            child: Text(
+                              "Recommended Movies",
+                              style: GoogleFonts.bebasNeue(
+                                  fontSize: 23,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w100),
+                            ),
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          Container(
+                            height: 360,
+                            child: Recommended(),
+                          ),
+                        ],
+                      ))),
+            )
+          : Center(
+              child:
+                  CircularProgressIndicator(), //show this if state is loading
+            ),
     );
   }
 }
