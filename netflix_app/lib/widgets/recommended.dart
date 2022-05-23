@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
+import 'package:netflix_app/Screens/recommendedDetailsPage.dart';
 import 'package:netflix_app/models/recommendedSlider.dart';
 import 'package:netflix_app/widgets/searchButton.dart';
 
@@ -58,7 +59,15 @@ class _RecommendedState extends State<Recommended> {
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => RecommendedDetailsPage(
+                            topRcmdMovies: snapshot.data[index]),
+                      ),
+                    );
+                  },
                   child: Container(
                     width: 210,
                     height: 300,
