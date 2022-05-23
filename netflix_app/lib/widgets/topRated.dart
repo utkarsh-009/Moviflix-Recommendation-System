@@ -1,9 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix_app/Screens/topRatedDetailsPage.dart';
 import 'package:netflix_app/models/topRatedSlider.dart';
-
-
 
 class TopRated extends StatefulWidget {
   const TopRated({Key? key}) : super(key: key);
@@ -32,7 +31,15 @@ class _TopRatedState extends State<TopRated> {
           index = list[index];
 
           return InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => TopRatedDetailedPage(
+                      topRatedMovie: TopMovieData.topMovies[index]),
+                ),
+              );
+            },
             child: Container(
               width: 140,
               height: 250,

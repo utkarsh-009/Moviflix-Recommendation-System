@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import 'package:netflix_app/models/topRatedSlider.dart';
 import 'package:netflix_app/models/trendingSlider.dart';
 
 class TrendingDetailedPage extends StatelessWidget {
@@ -14,9 +12,10 @@ class TrendingDetailedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xFF121212),
-        body: Column(
-          children: [Image.network(topTrendMovie.imageUrl)],
-        ));
+      backgroundColor: Color(0xFF121212),
+      body: Column(
+        children: [Image.network(topTrendMovie.imageUrl)],
+      ),
+    );
   }
 }
