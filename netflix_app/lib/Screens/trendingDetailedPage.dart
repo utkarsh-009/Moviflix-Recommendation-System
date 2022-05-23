@@ -14,8 +14,15 @@ class TrendingDetailedPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFF121212),
       body: SingleChildScrollView(
-        child: Column(
-          children: [Image.network(topTrendMovie.imageUrl)],
+        child: SafeArea(
+          child: Column(
+            children: [
+              Hero(
+                tag: topTrendMovie.id.toString(),
+                child: Image.network(topTrendMovie.imageUrl),
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -15,8 +15,15 @@ class RecommendedDetailsPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFF121212),
       body: SingleChildScrollView(
-        child: Column(
-          children: [Image.network(topRcmdMovies.imageUrl)],
+        child: SafeArea(
+          child: Column(
+            children: [
+              Hero(
+                tag: topRcmdMovies.id.toString(),
+                child: Image.network(topRcmdMovies.imageUrl),
+              )
+            ],
+          ),
         ),
       ),
     );

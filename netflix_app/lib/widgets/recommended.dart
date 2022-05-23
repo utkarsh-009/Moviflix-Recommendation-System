@@ -73,12 +73,15 @@ class _RecommendedState extends State<Recommended> {
                     height: 300,
                     child: Column(
                       children: [
-                        Container(
-                          height: 300,
-                          decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image: NetworkImage(
-                                snapshot.data[index].imageUrl,
+                        Hero(
+                          tag: snapshot.data[index].id.toString(),
+                          child: Container(
+                            height: 300,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: NetworkImage(
+                                  snapshot.data[index].imageUrl,
+                                ),
                               ),
                             ),
                           ),

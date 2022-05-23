@@ -35,9 +35,9 @@ class _TrendingState extends State<Trending> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) =>
-                      TrendingDetailedPage(topTrendMovie: TopTrendingMovieData
-                            .trendingMovies[index]),
+                  builder: (context) => TrendingDetailedPage(
+                      topTrendMovie:
+                          TopTrendingMovieData.trendingMovies[index]),
                 ),
               );
             },
@@ -46,12 +46,16 @@ class _TrendingState extends State<Trending> {
               height: 250,
               child: Column(
                 children: [
-                  Container(
-                    height: 200,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: NetworkImage(TopTrendingMovieData
-                            .trendingMovies[index].imageUrl),
+                  Hero(
+                    tag: TopTrendingMovieData.trendingMovies[index].id
+                        .toString(),
+                    child: Container(
+                      height: 200,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: NetworkImage(TopTrendingMovieData
+                              .trendingMovies[index].imageUrl),
+                        ),
                       ),
                     ),
                   ),

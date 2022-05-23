@@ -45,12 +45,15 @@ class _TopRatedState extends State<TopRated> {
               height: 250,
               child: Column(
                 children: [
-                  Container(
-                    height: 200,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: NetworkImage(
-                            TopMovieData.topMovies[index].imageUrl),
+                  Hero(
+                    tag: Key(TopMovieData.topMovies[index].id.toString()),
+                    child: Container(
+                      height: 200,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: NetworkImage(
+                              TopMovieData.topMovies[index].imageUrl),
+                        ),
                       ),
                     ),
                   ),
