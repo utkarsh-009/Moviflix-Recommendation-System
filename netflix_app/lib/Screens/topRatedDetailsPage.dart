@@ -20,7 +20,7 @@ class TopRatedDetailedPage extends StatelessWidget {
             child: Column(
               children: [
                 Hero(
-                  tag: Key(topRatedMovie.id.toString()),
+                  tag: topRatedMovie.id.toString()  + "@",
                   child: Image.network(topRatedMovie.imageUrl),
                 ),
               ],

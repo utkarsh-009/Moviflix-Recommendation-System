@@ -19,7 +19,7 @@ class RecommendedDetailsPage extends StatelessWidget {
           child: Column(
             children: [
               Hero(
-                tag: topRcmdMovies.id.toString(),
+                tag: topRcmdMovies.id.toString() + '#',
                 child: Image.network(topRcmdMovies.imageUrl),
               )
             ],

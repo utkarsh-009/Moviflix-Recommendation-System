@@ -46,7 +46,7 @@ class _TopRatedState extends State<TopRated> {
               child: Column(
                 children: [
                   Hero(
-                    tag: Key(TopMovieData.topMovies[index].id.toString()),
+                    tag: TopMovieData.topMovies[index].id.toString() + "@",
                     child: Container(
                       height: 200,
                       decoration: BoxDecoration(

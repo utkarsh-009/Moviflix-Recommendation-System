@@ -18,7 +18,7 @@ class TrendingDetailedPage extends StatelessWidget {
           child: Column(
             children: [
               Hero(
-                tag: topTrendMovie.id.toString(),
+                tag: topTrendMovie.id.toString() + '!',
                 child: Image.network(topTrendMovie.imageUrl),
               )
             ],

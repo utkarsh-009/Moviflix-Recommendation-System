@@ -48,7 +48,8 @@ class _TrendingState extends State<Trending> {
                 children: [
                   Hero(
                     tag: TopTrendingMovieData.trendingMovies[index].id
-                        .toString(),
+                            .toString() +
+                        '!',
                     child: Container(
                       height: 200,
                       decoration: BoxDecoration(

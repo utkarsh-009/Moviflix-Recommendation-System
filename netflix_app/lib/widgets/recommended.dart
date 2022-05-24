@@ -74,7 +74,7 @@ class _RecommendedState extends State<Recommended> {
                     child: Column(
                       children: [
                         Hero(
-                          tag: snapshot.data[index].id.toString(),
+                          tag: snapshot.data[index].id.toString() + '#',
                           child: Container(
                             height: 300,
                             decoration: BoxDecoration(
