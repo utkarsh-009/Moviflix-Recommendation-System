@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'package:netflix_app/models/topRatedSlider.dart';
-import 'package:netflix_app/models/trendingSlider.dart';
 
 class TopRatedDetailedPage extends StatelessWidget {
   final TopRatedSlider topRatedMovie;
@@ -19,6 +19,11 @@ class TopRatedDetailedPage extends StatelessWidget {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         backgroundColor: Color(0xFF121212),
+        title: Text(
+          "${topRatedMovie.title}",
+          style: GoogleFonts.poppins(
+              fontSize: 20, color: Colors.white, fontWeight: FontWeight.w500),
+        ),
       ),
       body: SingleChildScrollView(
         child: SafeArea(
@@ -35,10 +40,33 @@ class TopRatedDetailedPage extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                height: 200,
-                child: Column(),
-              )
+              Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      "${topRatedMovie.title}",
+                      style: GoogleFonts.poppins(
+                          fontSize: 25,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                  // SizedBox(
+                  //   height: 5,
+                  // ),s
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text(
+                      "${topRatedMovie.description}",
+                      style: GoogleFonts.poppins(
+                          fontSize: 15,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
