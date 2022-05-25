@@ -1,6 +1,6 @@
 {
-    "name": "netflix_app",
-    "short_name": "netflix_app",
+    "name": "moviflix_app",
+    "short_name": "moviflix_app",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

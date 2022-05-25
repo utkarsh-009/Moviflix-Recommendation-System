@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:netflix_app/models/trendingSlider.dart';
+import 'package:moviflix_app/models/trendingSlider.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class TrendingDetailedPage extends StatelessWidget {

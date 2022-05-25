@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-import 'package:netflix_app/models/topRatedSlider.dart';
+import 'package:moviflix_app/models/topRatedSlider.dart';
 
 class TopRatedDetailedPage extends StatelessWidget {
   final TopRatedSlider topRatedMovie;

@@ -1,8 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:netflix_app/Screens/topRatedDetailsPage.dart';
-import 'package:netflix_app/models/topRatedSlider.dart';
+import 'package:moviflix_app/Screens/topRatedDetailsPage.dart';
+import 'package:moviflix_app/models/topRatedSlider.dart';
 
 class TopRated extends StatefulWidget {
   const TopRated({Key? key}) : super(key: key);

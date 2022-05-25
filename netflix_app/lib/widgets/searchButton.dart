@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:netflix_app/Screens/homeScreen.dart';
-import 'package:netflix_app/widgets/recommended.dart';
+import 'package:moviflix_app/Screens/homeScreen.dart';
+import 'package:moviflix_app/widgets/recommended.dart';
 
 //Global variable
 String rcmd_movie = "inital";

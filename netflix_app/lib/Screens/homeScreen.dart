@@ -3,12 +3,12 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:netflix_app/models/topRatedSlider.dart';
-import 'package:netflix_app/models/trendingSlider.dart';
-import 'package:netflix_app/widgets/recommended.dart';
-import 'package:netflix_app/widgets/searchButton.dart';
-import 'package:netflix_app/widgets/topRated.dart';
-import 'package:netflix_app/widgets/trending.dart';
+import 'package:moviflix_app/models/topRatedSlider.dart';
+import 'package:moviflix_app/models/trendingSlider.dart';
+import 'package:moviflix_app/widgets/recommended.dart';
+import 'package:moviflix_app/widgets/searchButton.dart';
+import 'package:moviflix_app/widgets/topRated.dart';
+import 'package:moviflix_app/widgets/trending.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);

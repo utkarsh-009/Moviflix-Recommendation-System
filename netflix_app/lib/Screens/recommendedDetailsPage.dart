@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:velocity_x/velocity_x.dart';
-import 'package:netflix_app/models/recommendedSlider.dart';
+import 'package:moviflix_app/models/recommendedSlider.dart';
 
 class RecommendedDetailsPage extends StatelessWidget {
   final RecommendedMoviesSlider topRcmdMovies;

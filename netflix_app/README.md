@@ -1,4 +1,4 @@
-# netflix_app
+# moviflix_app
 
 A new Flutter project.
 

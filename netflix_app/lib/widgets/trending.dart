@@ -1,8 +1,8 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:netflix_app/Screens/trendingDetailedPage.dart';
-import 'package:netflix_app/models/trendingSlider.dart';
+import 'package:moviflix_app/Screens/trendingDetailedPage.dart';
+import 'package:moviflix_app/models/trendingSlider.dart';
 
 class Trending extends StatefulWidget {
   const Trending({Key? key}) : super(key: key);

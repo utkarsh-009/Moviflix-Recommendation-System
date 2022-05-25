@@ -3,9 +3,9 @@ import 'dart:convert';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
-import 'package:netflix_app/Screens/recommendedDetailsPage.dart';
-import 'package:netflix_app/models/recommendedSlider.dart';
-import 'package:netflix_app/widgets/searchButton.dart';
+import 'package:moviflix_app/Screens/recommendedDetailsPage.dart';
+import 'package:moviflix_app/models/recommendedSlider.dart';
+import 'package:moviflix_app/widgets/searchButton.dart';
 
 class Recommended extends StatefulWidget {
   const Recommended({Key? key}) : super(key: key);
