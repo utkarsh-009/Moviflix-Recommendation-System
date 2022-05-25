@@ -29,8 +29,9 @@ class _MySearchButtonState extends State<MySearchButton> {
         backgroundColor: Color(0xFF121212),
         // centerTitle: true,
         title: Text(
-          "Netflix",
-          style: GoogleFonts.bebasNeue(fontSize: 25, color: Colors.red),
+          "MOVIFLIX🍿",
+          style: GoogleFonts.poppins(
+              fontSize: 23, color: Colors.red, fontWeight: FontWeight.w700),
         ),
         leading: IconButton(
           onPressed: () {
@@ -47,22 +48,27 @@ class _MySearchButtonState extends State<MySearchButton> {
             SizedBox(
               height: 20,
             ),
-            CupertinoSearchTextField(
-              itemColor: Color.fromARGB(255, 188, 188, 198),
-              padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
-              // placeholderStyle: TextStyle(color: Colors.white),
-              style: TextStyle(
-                color: Color.fromARGB(255, 188, 188, 198),
-              ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CupertinoSearchTextField(
+                itemColor: Color.fromARGB(255, 188, 188, 198),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                // placeholderStyle: TextStyle(color: Colors.white),
+                style: TextStyle(
+                  color: Color.fromARGB(255, 188, 188, 198),
+                ),
+                borderRadius: BorderRadius.circular(20),
+                controller: _controller,
+                onSubmitted: (value) async {
+                  rcmd_movie = value;
+                  url = "https://netflix-rcmd-system.herokuapp.com/api/" +
+                      rcmd_movie.toString();
 
-              controller: _controller,
-              onSubmitted: (value) async {
-                rcmd_movie = value;
-                url = "https://netflix-rcmd-system.herokuapp.com/api/" +
-                    rcmd_movie.toString();
-                // data = await jsonDecode(fetchData(url));
-                print(rcmd_movie);
-              },
+                  // data = await jsonDecode(fetchData(url));
+                  print(rcmd_movie);
+                },
+              ),
             ),
           ],
         ),

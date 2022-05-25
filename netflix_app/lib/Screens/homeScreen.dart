@@ -76,8 +76,9 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Color(0xFF121212),
         // centerTitle: true,
         title: Text(
-          "Netflix",
-          style: GoogleFonts.bebasNeue(fontSize: 25, color: Colors.red),
+          "MOVIFLIX🍿",
+          style: GoogleFonts.poppins(
+              fontSize: 23, color: Colors.red, fontWeight: FontWeight.w700),
         ),
         leading: IconButton(
           onPressed: () {},

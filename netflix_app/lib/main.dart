@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: AnimatedSplashScreen(
         splash: Image.asset(
-          'assets/images/Netflix.png',
+          'assets/images/Moviflix.jpg',
         ),
         splashIconSize: double.infinity,
         splashTransition: SplashTransition.fadeTransition,
