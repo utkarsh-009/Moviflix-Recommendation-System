@@ -43,33 +43,36 @@ class _TopRatedState extends State<TopRated> {
             child: Container(
               width: 140,
               height: 250,
-              child: Column(
-                children: [
-                  Hero(
-                    tag: TopMovieData.topMovies[index].id.toString() + "@",
-                    child: Container(
-                      height: 200,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: NetworkImage(
-                              TopMovieData.topMovies[index].imageUrl),
+              child: Padding(
+                padding: const EdgeInsets.only(right: 4),
+                child: Column(
+                  children: [
+                    Hero(
+                      tag: TopMovieData.topMovies[index].id.toString() + "@",
+                      child: Container(
+                        height: 200,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: NetworkImage(
+                                TopMovieData.topMovies[index].imageUrl),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Container(
-                    child: Text(
-                      "${TopMovieData.topMovies[index].title}",
-                      style: GoogleFonts.poppins(
-                          fontSize: 13,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500),
+                    SizedBox(
+                      height: 5,
                     ),
-                  )
-                ],
+                    Container(
+                      child: Text(
+                        "${TopMovieData.topMovies[index].title}",
+                        style: GoogleFonts.poppins(
+                            fontSize: 13,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           );

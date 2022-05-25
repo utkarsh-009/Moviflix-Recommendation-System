@@ -54,7 +54,7 @@ class TopRatedDetailedPage extends StatelessWidget {
                   ),
                   // SizedBox(
                   //   height: 5,
-                  // ),s
+                  // ),
                   Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Text(

@@ -44,35 +44,38 @@ class _TrendingState extends State<Trending> {
             child: Container(
               width: 140,
               height: 250,
-              child: Column(
-                children: [
-                  Hero(
-                    tag: TopTrendingMovieData.trendingMovies[index].id
-                            .toString() +
-                        '!',
-                    child: Container(
-                      height: 200,
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: NetworkImage(TopTrendingMovieData
-                              .trendingMovies[index].imageUrl),
+              child: Padding(
+                padding: const EdgeInsets.only(right: 4),
+                child: Column(
+                  children: [
+                    Hero(
+                      tag: TopTrendingMovieData.trendingMovies[index].id
+                              .toString() +
+                          '!',
+                      child: Container(
+                        height: 200,
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: NetworkImage(TopTrendingMovieData
+                                .trendingMovies[index].imageUrl),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    height: 5,
-                  ),
-                  Container(
-                    child: Text(
-                      "${TopTrendingMovieData.trendingMovies[index].title}",
-                      style: GoogleFonts.poppins(
-                          fontSize: 13,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w500),
+                    SizedBox(
+                      height: 5,
                     ),
-                  )
-                ],
+                    Container(
+                      child: Text(
+                        "${TopTrendingMovieData.trendingMovies[index].title}",
+                        style: GoogleFonts.poppins(
+                            fontSize: 13,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500),
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           );

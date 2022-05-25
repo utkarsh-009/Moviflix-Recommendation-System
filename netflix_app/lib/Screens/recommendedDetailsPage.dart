@@ -51,9 +51,6 @@ class RecommendedDetailsPage extends StatelessWidget {
                           fontWeight: FontWeight.w500),
                     ),
                   ),
-                  // SizedBox(
-                  //   height: 5,
-                  // ),
                   Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Text(
