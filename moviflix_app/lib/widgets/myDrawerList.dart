@@ -1,8 +1,15 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:moviflix_app/Screens/homeScreen.dart';
 
-Widget MyDrawerList() {
-  return Container(
+class MyDrawerList extends StatelessWidget {
+  const MyDrawerList({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
       height: 500,
       color: Color(0xFF121212),
       child: ListView(
@@ -68,8 +75,17 @@ Widget MyDrawerList() {
                   color: Colors.white,
                   fontWeight: FontWeight.w100),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomeScreen(),
+                ),
+              );
+            },
           ),
         ],
-      ));
+      ),
+    );
+  }
 }

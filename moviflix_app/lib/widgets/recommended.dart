@@ -51,7 +51,9 @@ class _RecommendedState extends State<Recommended> {
       future: getRcmdMovies(rcmd_movie),
       builder: ((BuildContext context, AsyncSnapshot snapshot) {
         if (snapshot.connectionState != ConnectionState.done) {
-          return Center(child: CircularProgressIndicator());
+          return Center(
+            child: CircularProgressIndicator(),
+          );
         } else {
           return Column(
             children: [

@@ -87,7 +87,6 @@ class _HomeScreenState extends State<HomeScreen> {
             onPressed: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => MySearchButton()));
-              MySearchButton();
             },
             icon: Icon(Icons.search),
           )
