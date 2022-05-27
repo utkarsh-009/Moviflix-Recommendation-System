@@ -22,65 +22,69 @@ class _TrendingState extends State<Trending> {
   }
 
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-        itemCount: 10,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-          // Numbers are always unique and random
-          index = list[index];
+    return Column(
+      children: [
+        Expanded(
+          child: ListView.builder(
+            itemCount: 10,
+            scrollDirection: Axis.horizontal,
+            itemBuilder: (context, index) {
+              // Numbers are always unique and random
+              index = list[index];
 
-          return InkWell(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => TrendingDetailedPage(
-                      topTrendMovie:
-                          TopTrendingMovieData.trendingMovies[index]),
+              return InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => TrendingDetailedPage(
+                          topTrendMovie:
+                              TopTrendingMovieData.trendingMovies[index]),
+                    ),
+                  );
+                },
+                child: Container(
+                  width: 140,
+                  height: 250,
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 4),
+                    child: Column(
+                      children: [
+                        Hero(
+                          tag: TopTrendingMovieData.trendingMovies[index].id
+                                  .toString() +
+                              '!',
+                          child: Container(
+                            height: 200,
+                            decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: NetworkImage(TopTrendingMovieData
+                                    .trendingMovies[index].imageUrl),
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Container(
+                          child: Text(
+                            "${TopTrendingMovieData.trendingMovies[index].title}",
+                            style: GoogleFonts.poppins(
+                                fontSize: 13,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
                 ),
               );
             },
-            child: Container(
-              width: 140,
-              height: 250,
-              child: Padding(
-                padding: const EdgeInsets.only(right: 4),
-                child: Column(
-                  children: [
-                    Hero(
-                      tag: TopTrendingMovieData.trendingMovies[index].id
-                              .toString() +
-                          '!',
-                      child: Container(
-                        height: 200,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: NetworkImage(TopTrendingMovieData
-                                .trendingMovies[index].imageUrl),
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 5,
-                    ),
-                    Container(
-                      child: Text(
-                        "${TopTrendingMovieData.trendingMovies[index].title}",
-                        style: GoogleFonts.poppins(
-                            fontSize: 13,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
-          );
-        },
-      ),
+          ),
+        ),
+      ],
     );
   }
 }

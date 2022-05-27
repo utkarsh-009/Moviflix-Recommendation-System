@@ -53,57 +53,61 @@ class _RecommendedState extends State<Recommended> {
         if (snapshot.connectionState != ConnectionState.done) {
           return Center(child: CircularProgressIndicator());
         } else {
-          return Expanded(
-            child: ListView.builder(
-              itemCount: 10,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                return InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => RecommendedDetailsPage(
-                            topRcmdMovies: snapshot.data[index]),
-                      ),
-                    );
-                  },
-                  child: Container(
-                    width: 210,
-                    height: 300,
-                    child: Column(
-                      children: [
-                        Hero(
-                          tag: snapshot.data[index].id.toString() + '#',
-                          child: Container(
-                            height: 300,
-                            decoration: BoxDecoration(
-                              image: DecorationImage(
-                                image: NetworkImage(
-                                  snapshot.data[index].imageUrl,
+          return Column(
+            children: [
+              Expanded(
+                child: ListView.builder(
+                  itemCount: 10,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => RecommendedDetailsPage(
+                                topRcmdMovies: snapshot.data[index]),
+                          ),
+                        );
+                      },
+                      child: Container(
+                        width: 210,
+                        height: 300,
+                        child: Column(
+                          children: [
+                            Hero(
+                              tag: snapshot.data[index].id.toString() + '#',
+                              child: Container(
+                                height: 300,
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                    image: NetworkImage(
+                                      snapshot.data[index].imageUrl,
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),
-                          ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Container(
+                              child: Text(
+                                "${snapshot.data[index].movie_name}",
+                                style: GoogleFonts.poppins(
+                                    fontSize: 15,
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500),
+                              ),
+                            )
+                          ],
                         ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Container(
-                          child: Text(
-                            "${snapshot.data[index].movie_name}",
-                            style: GoogleFonts.poppins(
-                                fontSize: 15,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w500),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                );
-              },
-            ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+            ],
           );
         }
       }),

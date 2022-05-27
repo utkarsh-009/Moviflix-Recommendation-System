@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:moviflix_app/models/topRatedSlider.dart';
 import 'package:moviflix_app/models/trendingSlider.dart';
+import 'package:moviflix_app/widgets/myDrawer.dart';
 import 'package:moviflix_app/widgets/recommended.dart';
 import 'package:moviflix_app/widgets/searchButton.dart';
 import 'package:moviflix_app/widgets/topRated.dart';
@@ -80,10 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
           style: GoogleFonts.poppins(
               fontSize: 23, color: Colors.red, fontWeight: FontWeight.w700),
         ),
-        leading: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.menu),
-        ),
+
         actions: [
           IconButton(
             onPressed: () {
@@ -95,67 +93,78 @@ class _HomeScreenState extends State<HomeScreen> {
           )
         ],
       ),
+      drawer: Drawer(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              MyDrawer(),
+            ],
+          ),
+        ),
+      ),
       body: (isLoading != true)
           ? SingleChildScrollView(
               child: Container(
-                  child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                          vertical: 12, horizontal: 10),
-                      child: Column(
-                        children: [
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Text(
-                              "Trending Movies",
-                              style: GoogleFonts.bebasNeue(
-                                  fontSize: 23,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w100),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 15,
-                          ),
-                          Container(
-                            height: 300,
-                            child: Trending(),
-                          ),
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Text(
-                              "Top Rated Movies",
-                              style: GoogleFonts.bebasNeue(
-                                  fontSize: 23,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w100),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 15,
-                          ),
-                          Container(
-                            height: 300,
-                            child: TopRated(),
-                          ),
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child: Text(
-                              "Recommended Movies",
-                              style: GoogleFonts.bebasNeue(
-                                  fontSize: 23,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w100),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 15,
-                          ),
-                          Container(
-                            height: 360,
-                            child: Recommended(),
-                          ),
-                        ],
-                      ))),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
+                  child: Column(
+                    children: [
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          "Trending Movies",
+                          style: GoogleFonts.bebasNeue(
+                              fontSize: 23,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w100),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Container(
+                        height: 300,
+                        child: Trending(),
+                      ),
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          "Top Rated Movies",
+                          style: GoogleFonts.bebasNeue(
+                              fontSize: 23,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w100),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Container(
+                        height: 300,
+                        child: TopRated(),
+                      ),
+                      Align(
+                        alignment: Alignment.topLeft,
+                        child: Text(
+                          "Recommended Movies",
+                          style: GoogleFonts.bebasNeue(
+                              fontSize: 23,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w100),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Container(
+                        height: 360,
+                        child: Recommended(),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             )
           : Center(
               child:
