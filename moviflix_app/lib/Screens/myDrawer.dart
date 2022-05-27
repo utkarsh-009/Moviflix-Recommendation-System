@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:moviflix_app/widgets/myDrawerList.dart';
 
 class MyDrawer extends StatefulWidget {
   const MyDrawer({Key? key}) : super(key: key);
@@ -39,14 +40,4 @@ class _MyDrawerState extends State<MyDrawer> {
       ],
     );
   }
-}
-
-Widget MyDrawerList() {
-  return Container(
-    height: 500,
-    color: Colors.black,
-    child: Column(
-      
-    ),
-  );
 }

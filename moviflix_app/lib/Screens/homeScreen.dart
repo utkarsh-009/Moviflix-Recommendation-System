@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:moviflix_app/models/topRatedSlider.dart';
 import 'package:moviflix_app/models/trendingSlider.dart';
-import 'package:moviflix_app/widgets/myDrawer.dart';
+import 'package:moviflix_app/Screens/myDrawer.dart';
 import 'package:moviflix_app/widgets/recommended.dart';
 import 'package:moviflix_app/widgets/searchButton.dart';
 import 'package:moviflix_app/widgets/topRated.dart';
