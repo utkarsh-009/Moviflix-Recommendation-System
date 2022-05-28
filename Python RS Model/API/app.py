@@ -18,8 +18,8 @@ import streamlit as st
 
 # Data Collection and Pre-Processing
 url = "https://drive.google.com/file/d/1wmHJ4aRSddl6uUl95a5T1JibDNjaL0Kn/view?usp=sharing"
-path = 'https://drive.google.com/uc?export=download&id='+url.split('/')[-2]
-movies_data = pd.read_csv(path)
+path = "https://drive.google.com/uc?export=download&id="+url.split('/')[-2]
+movies_data = pd.read_csv(path, encoding='latin-1')
 
 
 # selecting the relevant features for recommendation
