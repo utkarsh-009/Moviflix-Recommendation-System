@@ -24,7 +24,7 @@ class _RecommendedState extends State<Recommended> {
   }
 
   Future<List<RecommendedMoviesSlider>> getRcmdMovies(String value) async {
-    url = "https://netflix-rcmd-system.herokuapp.com/api/" + value.toString();
+    url = "https://moviflix-rcmd-system.herokuapp.com/api/" + value.toString();
 
     var data = await http.get(Uri.parse(url));
     List<RecommendedMoviesSlider> rcmdMovies = [];

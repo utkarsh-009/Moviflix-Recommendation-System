@@ -1,18 +1,16 @@
 #Importing Dependencies
 
 from flask import Flask, jsonify, request
-import numpy as np
 import pandas as pd
 import difflib
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
 # Dependencies to get movie poster
+
 from bs4 import BeautifulSoup
 import requests,io
-import PIL.Image
 from urllib.request import urlopen
-import streamlit as st
 
 
 
