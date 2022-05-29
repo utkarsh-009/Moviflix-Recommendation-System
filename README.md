@@ -88,7 +88,7 @@
 
 <table>
   <tr>
-    <td>Informing About Potholes</td>
+    <td>App Logo</td>
      <td>Details of Potholes for Administrator</td>
      <td>Map displaying location of Potholes</td>
   </tr>
