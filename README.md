@@ -81,20 +81,37 @@
 
 3.  Install all the packages required. Run flutter pub get from the terminal to install the required packages.
 
+## 🔗 Drive Link Folder:
+[**https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd**](https://drive.google.com/drive/folders/1emlyW9wHz2BQlhP-eDoC2YGNwVTcAc9N?usp=sharing)
+
+
 ## 📷 Screenshots
 
-🔗 Drive Link Folder:
-[**https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd**](https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd)
+### APPLICATION UI
+<table>
+  <tr>
+    <td>App Logo and Nav Bar</td>
+     <td>App UI</td>
+     <td>Movie Info</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/utkarsh-009/Moviflix-Recommendation-System/blob/master/images/nav_bar.jpg?raw=true" width=270 height=480></td>
+    <td><img src="https://github.com/utkarsh-009/Moviflix-Recommendation-System/blob/master/images/app_ui.jpg?raw=true" width=270 height=480></td>
+    <td><img src="https://github.com/utkarsh-009/Moviflix-Recommendation-System/blob/master/images/info_page.jpg?raw=true" width=270 height=480></td>
+  </tr>
+ </table>
+
+### MOVIE RECOMMENDATION
 
 <table>
   <tr>
-    <td>App Logo</td>
-     <td>Details of Potholes for Administrator</td>
-     <td>Map displaying location of Potholes</td>
+    <td>App Logo and Nav Bar</td>
+     <td>App UI</td>
+     <td>Movie Info</td>
   </tr>
   <tr>
-    <td><img src="https://github.com/utkarsh-009/Pothole-Informer-TEAM-DASU/blob/Amogh/Images/image1.jpg?raw=true" width=270 height=480></td>
-    <td><img src="https://github.com/utkarsh-009/Pothole-Informer-TEAM-DASU/blob/Amogh/Images/image2.jpg?raw=true" width=270 height=480></td>
-    <td><img src="https://github.com/utkarsh-009/Pothole-Informer-TEAM-DASU/blob/Amogh/Images/image3.jpg?raw=true" width=270 height=480></td>
+    <td><img src="https://github.com/utkarsh-009/Moviflix-Recommendation-System/blob/master/images/nav_bar.jpg?raw=true" width=270 height=480></td>
+    <td><img src="https://github.com/utkarsh-009/Moviflix-Recommendation-System/blob/master/images/app_ui.jpg?raw=true" width=270 height=480></td>
+    <td><img src="https://github.com/utkarsh-009/Moviflix-Recommendation-System/blob/master/images/info_page.jpg?raw=true" width=270 height=480></td>
   </tr>
  </table>
