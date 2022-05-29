@@ -82,3 +82,19 @@
 3.  Install all the packages required. Run flutter pub get from the terminal to install the required packages.
 
 ## 📷 Screenshots
+
+🔗 Drive Link Folder:
+[**https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd**](https://drive.google.com/drive/folders/1fQFl0fi5t-57yV3kXluqpxRlxzPj2TXd)
+
+<table>
+  <tr>
+    <td>Informing About Potholes</td>
+     <td>Details of Potholes for Administrator</td>
+     <td>Map displaying location of Potholes</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/utkarsh-009/Pothole-Informer-TEAM-DASU/blob/Amogh/Images/image1.jpg?raw=true" width=270 height=480></td>
+    <td><img src="https://github.com/utkarsh-009/Pothole-Informer-TEAM-DASU/blob/Amogh/Images/image2.jpg?raw=true" width=270 height=480></td>
+    <td><img src="https://github.com/utkarsh-009/Pothole-Informer-TEAM-DASU/blob/Amogh/Images/image3.jpg?raw=true" width=270 height=480></td>
+  </tr>
+ </table>
