@@ -9,9 +9,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 # Dependencies to get movie poster
 
 from bs4 import BeautifulSoup
-import requests,io
-from urllib.request import urlopen
-
+import requests
 
 
 # Data Collection and Pre-Processing
