@@ -1,5 +1,11 @@
 # MOVIE RECOMMENDATION SYSTEM MODEL AND API
 
+<p align="center">
+  <img src="https://github.com/utkarsh-009/Moviflix-Recommendation-System/blob/master/images/banner.jpg?raw=true" alt="Pothole Informer - Team DASU">
+</p>
+
+
+
 ## 📄 Description
 
 - The Movie Recommendation Model is created using Python Language with scikit-learn machine learning package. 
