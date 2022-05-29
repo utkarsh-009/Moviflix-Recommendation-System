@@ -47,6 +47,9 @@
 
 - [**Dataset**](https://drive.google.com/drive/u/0/folders/1auvOI10P8za5x6Y5RDfOgch5ietTAdNr)
 
+- [**Slides**](https://docs.google.com/presentation/d/1aKU_ZAlJz4cBiEAbdLWnsyFPCw3pviFRSto9phZwnHA/edit?usp=sharing)
+
+- [**Explanation and Demo Video**](https://www.youtube.com/watch?v=JamJ7NCRRQc&list=LL&index=1)
 
 # MOVIFLIX 🍿
 
