@@ -61,7 +61,12 @@ class _MySearchButtonState extends State<MySearchButton> {
                 borderRadius: BorderRadius.circular(20),
                 controller: _controller,
                 onSubmitted: (value) async {
+                  if (value == "") {
+                    value = "default";
+                  }
+
                   rcmd_movie = value;
+
                   url = "https://netflix-rcmd-system.herokuapp.com/api/" +
                       rcmd_movie.toString();
 
