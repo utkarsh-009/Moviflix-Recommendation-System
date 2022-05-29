@@ -105,13 +105,13 @@
 
 <table>
   <tr>
-    <td>App Logo and Nav Bar</td>
-     <td>App UI</td>
-     <td>Movie Info</td>
+    <td>Default Recommendation List</td>
+     <td>Search Favourite Movie</td>
+     <td>Recommended Movie List </td>
   </tr>
   <tr>
-    <td><img src="https://github.com/utkarsh-009/Moviflix-Recommendation-System/blob/master/images/nav_bar.jpg?raw=true" width=270 height=480></td>
-    <td><img src="https://github.com/utkarsh-009/Moviflix-Recommendation-System/blob/master/images/app_ui.jpg?raw=true" width=270 height=480></td>
-    <td><img src="https://github.com/utkarsh-009/Moviflix-Recommendation-System/blob/master/images/info_page.jpg?raw=true" width=270 height=480></td>
+    <td><img src="https://github.com/utkarsh-009/Moviflix-Recommendation-System/blob/master/images/default_rcmd.jpg?raw=true" width=270 height=480></td>
+    <td><img src="https://github.com/utkarsh-009/Moviflix-Recommendation-System/blob/master/images/search_bar.jpg?raw=true" width=270 height=480></td>
+    <td><img src="https://github.com/utkarsh-009/Moviflix-Recommendation-System/blob/master/images/rcmd_movies.jpg?raw=true" width=270 height=480></td>
   </tr>
  </table>
