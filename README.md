@@ -47,7 +47,7 @@
 
 - [**Dataset**](https://drive.google.com/drive/folders/1mlAXxu1uk9Na92GKEkoCa0L39JZ9Aw28)
 
-- [**Slides**](https://docs.google.com/presentation/d/1aKU_ZAlJz4cBiEAbdLWnsyFPCw3pviFRSto9phZwnHA/edit?usp=sharing)
+- [**Presentation Slides**](https://docs.google.com/presentation/d/1aKU_ZAlJz4cBiEAbdLWnsyFPCw3pviFRSto9phZwnHA/edit?usp=sharing)
 
 - [**Explanation and Demo Video**](https://www.youtube.com/watch?v=JamJ7NCRRQc&list=LL&index=1)
 
